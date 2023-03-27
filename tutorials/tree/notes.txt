@@ -1,0 +1,12 @@
+three rules to become a tree
+1. exactly 1 root node
+2. Can have at most 2 child nodes
+3. There in exactly 1 way to reach a node inside the tree
+
+
+Depth-First-Values (algorithm)
+
+* we can traverse the tree using 
+  -> pre-order = root -> left -> right
+  -> in-order = left -> root -> right
+  -> post-order = left -> right -> root

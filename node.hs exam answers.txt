@@ -1,0 +1,17 @@
+time
+exit
+test
+print
+
+2. N-API
+3. start
+4. what does .node extention represents
+6.readfilesync
+7. require.cache
+8.process.stdout
+9. new eventEmitter(change)
+10. __filename
+11.ftp
+12.
+13. util.promisify(child_process.exec)
+14. spawn("ps -ef")
