@@ -1,23 +1,35 @@
 // problem no: 21
+// the following is a array solution, need to perform this solution for linked-list
 
-const mergeTwoSortedArrays = (list1, list2) => {
-  for (i = 0; i < list2.length; i++) {
-    list1[list1.length] = list2[i]
-    let j = list1.length
-    while (j >= 0) {
-      if (list1[j] < list1[j - 1]) {
-        let temp = list1[j]
-        list1[j] = list1[j - 1]
-        list1[j - 1] = temp
-      }
-      j--
+const mergeTwoLists = (list1, list2) => {
+  const mergedList = []
+  let i = 0
+  let j = 0
+
+  while (i < list1.length && j < list2.length) {
+    if (list1[i] < list2[j]) {
+      mergedList.push(list1[i])
+      i++
+    } else {
+      mergedList.push(list2[j])
+      j++
     }
   }
-  list1 = list1.sort()
-  return list1
-}
 
-const mergeTwoLists = (list1, list2) => {}
+  console.log(mergedList)
+
+  while (i < list1.length) {
+    mergedList.push(list1[i])
+    i++
+  }
+
+  while (j < list2.length) {
+    mergedList.push(list2[j])
+    j++
+  }
+
+  return mergedList
+}
 
 const list1 = [1, 2, 3, 5]
 const list2 = [1, 3, 6, 8]

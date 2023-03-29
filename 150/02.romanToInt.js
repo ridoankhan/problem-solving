@@ -8,19 +8,20 @@ const romanToInt = (s) => {
     C: 100,
     D: 500,
     M: 1000,
-  };
-  let result = 0;
+  }
+
+  let result = 0
 
   for (let i = 0; i < s.length; i++) {
     if (romanDict[s[i]] < romanDict[s[i + 1]]) {
-      result -= romanDict[s[i]];
+      result -= romanDict[s[i]]
     } else {
-      result += romanDict[s[i]];
+      result += romanDict[s[i]]
     }
   }
 
-  return result;
-};
+  return result
+}
 
-const inputStr = "MCMXCVI";
-console.log(romanToInt(inputStr));
+const inputStr = 'MCMXCVI'
+console.log(romanToInt(inputStr))
