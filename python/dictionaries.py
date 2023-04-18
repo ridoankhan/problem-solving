@@ -1,5 +1,5 @@
 # A dictionary is a collection which is unordered, changable and indexed. No duplicate members
-
+# in other languages, we usually call it as hashMap or hashTable
 person = {
     'first_name': 'Ridoan Khan',
     'last_name': 'Anik',
@@ -26,8 +26,8 @@ person2 = person.copy()
 person2['city'] = 'Dhaka'
 
 # remove an item
-# del (person['age'])
-# person.pop('phone')
+# del (person['age'])  # method-1
+# person.pop('phone')  # method-2
 
 # clear
 # person.clear()
