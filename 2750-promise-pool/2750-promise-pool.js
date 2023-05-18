@@ -4,30 +4,25 @@
  * @return {Function}
  */
 var promisePool = async function(functions, n) {
-  const results = []; // Store the resolved values
-  let currentIndex = 0; // Track the index of the current function being executed
-  let activeCount = 0; // Track the number of active promises
+  const results = [] 
+  let currentIndex = 0 
+  let activeCount = 0 
 
   while (currentIndex < functions.length || activeCount > 0) {
     if (activeCount < n && currentIndex < functions.length) {
-      // Execute a new function if the pool limit is not reached and there are more functions
-      const currentFunction = functions[currentIndex];
-      const promise = currentFunction(); // Execute the function
-      activeCount++; // Increment the active promise count
+      const currentFunction = functions[currentIndex]
+      const promise = currentFunction()
+      activeCount++
 
       promise.then(result => {
-        results[currentIndex] = result; // Store the resolved value
-        activeCount--; // Decrement the active promise count
+        results[currentIndex] = result 
+        activeCount--
       });
-
-      currentIndex++; // Move to the next function
+      currentIndex++ 
     }
-
-    // Wait for the next function to resolve before proceeding
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await new Promise(resolve => setTimeout(resolve, 0))
   }
-
-  return [results, results[results.length - 1]];
+  return [results, results[results.length - 1]]
 };
 
 /**
